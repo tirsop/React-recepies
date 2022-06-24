@@ -16,7 +16,7 @@ export default function Create() {
   // lines 14, 47 and 28 to focus the curson on input once we press add
   const ingredientInput = useRef(null)
 
-  const { postData, data, error } = useFetch('http://localhost:3000/recipes', 'POST')
+  const { postData, data } = useFetch('http://localhost:3000/recipes', 'POST')
 
   const handleSubmit = (e) => {
     e.preventDefault()

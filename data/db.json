@@ -2,7 +2,7 @@
   "recipes": [
     {
       "id": "1",
-      "title": "Veggie Stew",
+      "title": "Paella",
       "ingredients": [
         "1 Carrot",
         "1 Leek",
@@ -14,7 +14,7 @@
     },
     {
       "id": "2",
-      "title": "Veggie Pizza",
+      "title": "Spanish omelette",
       "ingredients": [
         "1 Base",
         "Tomata pasata",
@@ -26,7 +26,7 @@
     },
     {
       "id": "3",
-      "title": "Greek Salad",
+      "title": "Galician octopus",
       "ingredients": [
         "1 Onion",
         "1 Block of Feta",
@@ -38,11 +38,15 @@
       "cookingTime": "35 minutes"
     },
     {
-      "title": "qfqw",
+      "title": "Pintxos",
       "ingredients": [
-        "eadc"
+        "1 bread",
+        "1 sesame seeds",
+        "Olives",
+        "Tomatoes",
+        "Olive Oil"
       ],
-      "method": "3243",
+      "method": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse minima ex rem quis similique eum ratione quaerat, voluptas molestias ut repudiandae delectus voluptates. Eius esse at tenetur ab accusamus excepturi?",
       "cookingTime": "22 minutes",
       "id": "mcopKr_"
     }
