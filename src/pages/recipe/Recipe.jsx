@@ -20,6 +20,7 @@ export default function Recipe() {
           <p>Takes {recipe.cookingTime} to cook.</p>
           <ul>
             {recipe.ingredients.map(ing => <li key={ing}>{ing}</li>)}
+            {/* using ing as keys bc they're unique */}
           </ul>
           <p className="method">{recipe.method}</p>
         </>
