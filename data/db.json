@@ -60,6 +60,18 @@
       "method": "Put the all together and fry high heat.",
       "cookingTime": "15 minutes",
       "id": "dXTJw_C"
+    },
+    {
+      "title": "Pan con tomate",
+      "ingredients": [
+        "pan",
+        "tomato",
+        "olive oil",
+        "sal"
+      ],
+      "method": "Toast the bread, and put tomato on it, then chotto olive oil and finally a bit of salt. This is the typical Spanish breakfast!",
+      "cookingTime": "5 minutes",
+      "id": "QNuao__"
     }
   ]
 }
