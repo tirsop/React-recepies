@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import { useFetch } from '../../hooks/useFetch'
 
 // styles
 import './Create.css'
@@ -13,9 +14,12 @@ export default function Create() {
   // lines 14, 47 and 28 to focus the curson on input once we press add
   const ingredientInput = useRef(null)
 
+  const { postData, data, error } = useFetch('http://localhost:3000/recipes', 'POST')
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(title, method, cookingTime, ingredients);
+    console.log(title, ingredients, method, cookingTime);
+    postData({ title, ingredients, method, cookingTime: `${cookingTime} minutes` })
   }
 
   const handleAdd = (e) => {
@@ -51,8 +55,6 @@ export default function Create() {
         {ingredients.length > 0 &&
           <p className='ing-check'>Current ingredients: {ingredients.map(ing => <em key={ing}>{ing}, </em>)}</p>
         }
-
-
 
         <label htmlFor="method">How do you prepare it?</label>
         <textarea id="method" cols="30" rows="10"
