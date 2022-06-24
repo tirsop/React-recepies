@@ -1,4 +1,5 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useFetch } from '../../hooks/useFetch'
 
 // styles
@@ -10,6 +11,7 @@ export default function Create() {
   const [cookingTime, setCookingTime] = useState('')
   const [newIngredient, setNewIngredient] = useState('')
   const [ingredients, setIngredients] = useState([])
+  const navigate = useNavigate()
 
   // lines 14, 47 and 28 to focus the curson on input once we press add
   const ingredientInput = useRef(null)
@@ -31,6 +33,12 @@ export default function Create() {
     setNewIngredient('')
     ingredientInput.current.focus()
   }
+
+  useEffect(() => {
+    if (data) {
+      navigate('/')
+    }
+  }, [data, navigate])
 
   return (
     <div className='create'>
