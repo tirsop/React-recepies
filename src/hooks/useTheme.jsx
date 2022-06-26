@@ -10,7 +10,7 @@ export const useTheme = () => {
   const context = useContext(ThemeContext)
 
   if (context === undefined) {
-    throw new Eror("useTheme() must be used inside a ThemeProvided")
+    throw new Error("useTheme() must be used inside a ThemeProvided")
   }
 
   return context
