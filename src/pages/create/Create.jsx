@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { ThemeContext } from '../../context/ThemeContext'
 import { useFetch } from '../../hooks/useFetch'
 
 // styles
@@ -12,6 +13,7 @@ export default function Create() {
   const [newIngredient, setNewIngredient] = useState('')
   const [ingredients, setIngredients] = useState([])
   const navigate = useNavigate()
+  const { mode } = useContext(ThemeContext)
 
   // lines 14, 47 and 28 to focus the curson on input once we press add
   const ingredientInput = useRef(null)
@@ -41,7 +43,7 @@ export default function Create() {
   }, [data, navigate])
 
   return (
-    <div className='create'>
+    <div className={`create ${mode}`}>
       <h2 className='page-title'>Add a new recipe</h2>
       <form onSubmit={handleSubmit}>
 
