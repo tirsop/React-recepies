@@ -37,7 +37,7 @@ export const useFetch = (url, method = "GET") => {
           console.log("the fetch was aborted")
         } else {
           setIsPending(false)
-          setError('Could not fetch the data')
+          setError('To use this app:\n1.Download the code from https://github.com/tirsop/React-recepies.\n2.Install all the dependencies with npm install.\n3.In the terminal run the command: json-server --watch "./data/db.json".\n4.I another terminal start a localhost server with npm start.\n5.Enjoy the app by looking at existing recipes or by adding yours!')
         }
       }
     }
