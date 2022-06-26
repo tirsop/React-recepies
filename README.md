@@ -1,3 +1,15 @@
+# How to use this app:
+
+This app does not use database, but a mock-up backend using the json-server package. 
+To use this app:
+1.Download the code from https://github.com/tirsop/React-recepies.
+2.Install all the dependencies with npm install.
+3.In the terminal run the command: json-server --watch "./data/db.json".
+4.I another terminal start a localhost server with npm start.
+5.Enjoy the app by looking at existing recipes or by adding yours!
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
