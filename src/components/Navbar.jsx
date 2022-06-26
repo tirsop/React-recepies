@@ -9,11 +9,11 @@ import './Navbar.css'
 
 
 export default function Navbar() {
-  const { color } = useContext(ThemeContext)
+  const { color, changeColor } = useContext(ThemeContext)
 
   return (
     <div className='navbar' style={{ backgroundColor: color }}>
-      <nav>
+      <nav onClick={() => changeColor('pink')}>
         <Link to="/" className='brand'><h1>Spanish food recipes</h1></Link>
         <Searchbar />
         <Link to="/create">Create Recipe</Link>
