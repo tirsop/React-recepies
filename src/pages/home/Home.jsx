@@ -40,12 +40,12 @@ export default function Home() {
   // }, [])
 
   // with real-time
-  const col = 'recipes'
+  let ref = collection(db, 'recipes')
   useEffect(() => {
     setIsPending(true)
-    const unsub = onSnapshot(collection(db, col), (snapshot) => {
+    const unsub = onSnapshot(ref, (snapshot) => {
       if (snapshot.empty) {
-        setError(`No ${col} to load.`)
+        setError(`No recipes to load.`)
         setIsPending(false)
       } else {
         // console.log(snapshot.docs[0].data());
@@ -59,7 +59,7 @@ export default function Home() {
     })
 
     return () => unsub()
-  }, [col])
+  }, [ref])
 
 
   return (
