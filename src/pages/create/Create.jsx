@@ -1,8 +1,8 @@
-import { addDoc, collection } from 'firebase/firestore'
-import { useState, useRef, useEffect, useContext } from 'react'
+import { useState, useRef, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ThemeContext } from '../../context/ThemeContext'
 import { db } from '../../firebase/config'
+import { addDoc, collection } from 'firebase/firestore'
 // import { useFetch } from '../../hooks/useFetch'
 
 // styles
