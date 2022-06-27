@@ -1,7 +1,9 @@
+import { addDoc, collection } from 'firebase/firestore'
 import { useState, useRef, useEffect, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ThemeContext } from '../../context/ThemeContext'
-import { useFetch } from '../../hooks/useFetch'
+import { db } from '../../firebase/config'
+// import { useFetch } from '../../hooks/useFetch'
 
 // styles
 import './Create.css'
@@ -18,12 +20,17 @@ export default function Create() {
   // lines 14, 47 and 28 to focus the curson on input once we press add
   const ingredientInput = useRef(null)
 
-  const { postData, data } = useFetch('http://localhost:3000/recipes', 'POST')
+  // const { postData, data } = useFetch('http://localhost:3000/recipes', 'POST')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(title, ingredients, method, cookingTime);
-    postData({ title, ingredients, method, cookingTime: `${cookingTime} minutes` })
+    const doc = { title, ingredients, method, cookingTime: `${cookingTime} minutes` }
+    try {
+      await addDoc(collection(db, 'recipes'), doc)
+      navigate('/')
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   const handleAdd = (e) => {
@@ -35,12 +42,6 @@ export default function Create() {
     setNewIngredient('')
     ingredientInput.current.focus()
   }
-
-  useEffect(() => {
-    if (data) {
-      navigate('/')
-    }
-  }, [data, navigate])
 
   return (
     <div className={`create ${mode}`}>
