@@ -39,7 +39,8 @@ export default function Recipe() {
       {recipe && (
         <>
           <h2 className="page-title">{recipe.title}</h2>
-          <p>Takes {recipe.cookingTime} to cook.</p>
+          <p>Cooking time: {recipe.cookingTime}.</p>
+          <p className="">Ingredients: </p>
           <ul>
             {recipe.ingredients.map(ing => <li key={ing}>{ing}</li>)}
             {/* using ing as keys bc they're unique */}

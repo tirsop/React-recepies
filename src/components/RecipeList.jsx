@@ -24,8 +24,8 @@ export default function RecipeList({ recipes }) {
       {recipes.map(recipe => (
         <div key={recipe.id} className={`card ${mode}`}>
           <h3>{recipe.title}</h3>
-          <p className="">{recipe.cookingTime} to make</p>
-          <div className="">{recipe.method.substring(0, 100)}</div>
+          <p className="">Cooking time: {recipe.cookingTime}</p>
+          <div className="">{recipe.method.substring(0, 100)}...</div>
           <Link to={`/recipes/${recipe.id}`}>Cook this!</Link>
           <img src={Trashcan} alt="delete icon"
             className='delete'

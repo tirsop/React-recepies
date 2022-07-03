@@ -5,6 +5,7 @@
   background: #fff;
   padding: 40px;
   box-sizing: border-box;
+  max-width: 700px;
 }
 .recipe ul {
   display: flex;
@@ -36,4 +37,11 @@
 .recipe.dark h2,
 .recipe.dark li {
   color: #e4e4e4;
+}
+
+/* --------------- MEDIA_QUERIES--------------- */
+@media (max-width: 760px) {
+  .recipe {
+    margin: 40px 30px;
+  }
 }
