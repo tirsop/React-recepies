@@ -2,8 +2,10 @@
   color: #555;
   max-width: 480px;
   margin: 60px auto;
+  padding: 0 30px 50px;
+  
 }
-.create label span {
+.create label {
   display: block;
   margin: 30px 0 10px;
 }
@@ -13,7 +15,6 @@
 }
 .create button {
   display: block;
-  width: 100px;
   font-size: 1em;
   color: #fff;
   padding: 8px 20px;

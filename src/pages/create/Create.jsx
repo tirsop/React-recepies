@@ -15,7 +15,7 @@ export default function Create() {
   const [newIngredient, setNewIngredient] = useState('')
   const [ingredients, setIngredients] = useState([])
   const navigate = useNavigate()
-  const { mode } = useContext(ThemeContext)
+  const { mode, color } = useContext(ThemeContext)
 
   // lines 14, 47 and 28 to focus the curson on input once we press add
   const ingredientInput = useRef(null)
@@ -60,7 +60,11 @@ export default function Create() {
             onChange={(e) => setNewIngredient(e.target.value)}
             value={newIngredient}
             ref={ingredientInput} />
-          <button onClick={handleAdd} className='btn'>Add</button>
+          <button
+            onClick={handleAdd}
+            className='btn'
+            style={{ backgroundColor: color }}
+          >Add</button>
         </div>
         {ingredients.length === 0 && <p className='ing-check'>No ingredients added so far</p>}
         {ingredients.length > 0 &&
@@ -79,7 +83,10 @@ export default function Create() {
           value={cookingTime}
           required />
 
-        <button className='btn'>Sumbit</button>
+        <button
+          className='btn'
+          style={{ backgroundColor: color }}
+        >Sumbit</button>
 
       </form>
     </div>
